@@ -1,0 +1,41 @@
+#root{
+  font-family: "Roboto Mono", serif;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: "Exo 2", serif;
+}
+.flat-corner{
+  position: relative;
+}
+.flat-corner::after,
+.flat-corner::before{
+  content: " ";
+  position: absolute;
+  background-color: white;
+}
+
+.flat-corner::before{
+  width: 100px;
+  height: 100px;
+  top: -50px;
+  left: -50px;
+  transform: rotate(45deg);
+}
+.flat-corner::after{
+  width: 100px;
+  height: 100px;
+  right: -50px;
+  bottom: -50px;
+  transform: rotate(45deg);
+  
+}
+.cat {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.cat::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+
+
+
