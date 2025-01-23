@@ -13,11 +13,13 @@ import { category } from '../datas/variables'
 import dashboard from '../assets/DashboardCompany.svg'
 import HomeJobCard from '../components/HomeJobCard'
 import LatestJobs from '../components/LatestJobs'
+import { useNavigate } from 'react-router-dom'
 
 
 
 
 const Home = () => {
+    
   return (
     <>
         <div>

@@ -4,7 +4,7 @@ import Category from './Category'
 
 const LatestJobs = () => {
     return (
-        <div className='w-full flex gap-5 bg-white shadow p-7'>
+        <div className='w-full flex flex-col md:flex-row lg:flex-row gap-5 bg-white shadow p-7 rounded'>
             <div className="bg-red-100 rounded-full overflow-hidden w-16 h-16">
                 <img className='w-full' src={logo1} alt="" />
             </div>
@@ -13,13 +13,12 @@ const LatestJobs = () => {
                     Email Marketing
                 </h1>
                 <div className='text-xl text-gray'>Company Name-place</div>
-                <div className="flex gap-5 overflow-x-hidden">
-            <Category type={"Marketing"}/>
-            <Category type={"sales"}/>
-            <Category type={"it"}/>
-            <Category type={"Marketing"}/>
-
-        </div>
+                <div className="flex gap-5 overflow-x-hidden w-full">
+                    <Category type={"Marketing"} />
+                    <Category type={"sales"} />
+                    <Category type={"it"} />
+                    <Category type={"Marketing"} />
+                </div>
             </div>
 
 

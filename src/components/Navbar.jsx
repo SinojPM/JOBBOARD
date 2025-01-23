@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import logo from "../assets/Logo.svg"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
 
 
@@ -8,6 +8,7 @@ import { Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText
 
 const Navbar = () => {
     const [open, setOpen] = useState(false)
+    const navigate = useNavigate()
 
     const toggleDrawer = () => {
         setOpen(!open)
@@ -19,11 +20,11 @@ const Navbar = () => {
                     <div onClick={toggleDrawer} className="flex lg:hidden justify-center items-center">
                         <i className="fa-solid fa-bars text-gray"></i>
                     </div>
-                    <img src={logo} alt="Logo" width={"200px"} />
+                    <img onClick={()=>navigate('/')} src={logo} alt="Logo" width={"200px"} />
                     <div className='hidden lg:flex items-center '>
                         <ul className='text-gray flex gap-5 h-5/5 items-center'>
-                            <li><Link className='hover:text-blue-300'>Find Jobs</Link></li>
-                            <li><Link className='hover:text-blue-300'>Browse Companies</Link></li>
+                            <li><Link to={'/find-jobs'} className='hover:text-blue-300'>Find Jobs</Link></li>
+                            <li><Link to={'/browse-companies'} className='hover:text-blue-300'>Browse Companies</Link></li>
                         </ul>
                     </div>
                 </div>
