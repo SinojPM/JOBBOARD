@@ -5,7 +5,7 @@ import Category from './Category'
 
 const HomeJobCard = () => {
   return (
-    <div className='w-100 h-96 p-7 border border-blue-300 rounded-xl flex flex-col justify-evenly '>
+    <div className='w-100 h-96 p-7 border border-blue-300 rounded-xl flex flex-col justify-evenly hover:shadow-xl '>
         <div className="flex justify-between">
             <div className="bg-red-100 rounded-full overflow-hidden w-16 h-16">
                 <img className='w-full' src={logo1} alt="" />

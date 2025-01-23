@@ -35,9 +35,9 @@ const Footer = () => {
                 <div className="col-span-2">
                     <h1 className='text-xl font-bold mb-5'>Get Job Notifications</h1>
                     <p>The latest job news, articles, sent to your inbox weekly.</p>
-                    <div className="mt-5 flex w-full justify-start">
-                        <input className='w-4/6 h-12 rounded-full text-dark px-5' placeholder='Email' type="text" />
-                        <button className='rounded-full w-2/6 bg-blue-400 h-12 '>subscribe</button>
+                    <div className="mt-5 flex w-full justify-start gap-5">
+                        <input className='w-4/6 h-12 rounded text-dark px-5' placeholder='Email' type="text" />
+                        <button className='rounded w-2/6 bg-blue-400 h-12 '>subscribe</button>
                     </div>
                 </div>
             </div>

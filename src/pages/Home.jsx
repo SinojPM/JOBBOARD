@@ -12,6 +12,7 @@ import CategoryCard from '../components/CategoryCard'
 import { category } from '../datas/variables'
 import dashboard from '../assets/DashboardCompany.svg'
 import HomeJobCard from '../components/HomeJobCard'
+import LatestJobs from '../components/LatestJobs'
 
 
 
@@ -52,7 +53,7 @@ const Home = () => {
             </section>
             <div className="px-5 lg:px-28 py-10 text-gray text-2xl font-bold">
                 <p>Companies we helped grow</p>
-                <div className="py-10 flex justify-evenly items-center flex-wrap gap-5">
+                <div className="py-10 flex justify-between items-center flex-wrap gap-5">
                     <img src={vodafone} alt="" />
                     <img src={amd} alt="" />
                     <img src={intel} alt="" />
@@ -60,7 +61,6 @@ const Home = () => {
                     <img src={talkit} alt="" />
                 </div>
             </div>
-
             <section className="px-5 lg:px-28 py-10 bg-blue-100">
                 <h1 className='text-4xl font-black text-gray'>Explore By <span className='text-4xl text-blue-300' >Category</span></h1>
                 <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
@@ -85,7 +85,7 @@ const Home = () => {
 
                 </div>
             </section>
-            <section className="px-5 lg:px-28 py-10 bg-blue-100">
+            <section className="px-5 lg:px-28 py-10">
             <div className='text-blue-400 text-xl flex sm:flex-wrap justify-between items-center'>
                     <h1 className='text-4xl font-black text-gray'>Featured <span className='text-4xl text-blue-300' >Jobs</span></h1>
                     <a href="">Show All<i class="fa-solid fa-arrow-right text-blue-300 hover:text-green-100 text-2xl"></i></a>
@@ -106,15 +106,13 @@ const Home = () => {
                     <h1 className='text-4xl font-black text-gray'>Latest <span className='text-4xl text-blue-300' >Jobs</span></h1>
                     <a href="">Show All<i class="fa-solid fa-arrow-right text-blue-300 hover:text-green-100 text-2xl"></i></a>
                 </div>
-                <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-                    <HomeJobCard/>
-                    <HomeJobCard/>
-                    <HomeJobCard/>
-                    <HomeJobCard/>
-                    <HomeJobCard/>
-                    <HomeJobCard/>
-                    <HomeJobCard/>
-                    <HomeJobCard/>
+                <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5">
+                    <LatestJobs/>
+                    <LatestJobs/>
+                    <LatestJobs/>
+                    <LatestJobs/>
+                    <LatestJobs/>
+                    <LatestJobs/>
                 </div>
             </section>
 
