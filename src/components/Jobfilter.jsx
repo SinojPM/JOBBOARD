@@ -1,9 +1,10 @@
 import { Checkbox, FormControlLabel, FormGroup } from '@mui/material'
+import classNames from 'classnames'
 import React from 'react'
 
 const Jobfilter = () => {
     return (
-        <div className='w-1/5  flex flex-col py-20'>
+        <div className={classNames('w-1/5  flex flex-col py-20 hidden md:block lg:block')}>
             <div className='flex flex-col'>
                 <h1 className="text-xl text-blue-300">Type Of Employment</h1>
                 <label className='flex items-center'><Checkbox />

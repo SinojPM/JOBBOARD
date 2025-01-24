@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import underline from '../assets/undeline.svg'
 import SearchBar from '../components/SearchBar'
 import Jobfilter from '../components/Jobfilter'
+import JobCard from '../components/JobCard'
+import { useDispatch, useSelector } from 'react-redux'
+import { setGridResponse } from '../redux/slices/responseSlice'
+import { Pagination } from '@mui/material'
+
 
 const FindJobs = () => {
+    const dispatch = useDispatch()
+    const [page,setPage]=useState(1)
+    const {gridResponse} = useSelector((state)=>state.responseReducer)
+    const allJobs = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+    
     return (
         <>
             <div className='px-5 lg:px-28 '>
@@ -26,8 +36,45 @@ const FindJobs = () => {
                         <p className='text-black text-xl'>Popular: <span className='text-gray textxl'>MERN,UI/UX developer etc</span></p>
                     </div>
             </section>
-            <section className='flex p-0 md:px-5 lg:px-28'>
-                <Jobfilter/>
+            <section className='flex p-5 md:px-5 lg:px-28 w-full'>
+                    <Jobfilter/>
+                <div className="flex-1 flex-col w-full py-20">
+                    <div className="flex justify-between items-start lg:items-center flex-col gap-5 md:flex-row lg:flex-row">
+                        <div className="flex flex-col">
+                            <h1 className="text-4xl font-bold">All <span className='text-blue-300'>Jobs</span></h1>
+                            <p className="text-gray text-xl">Showing 73 Results</p>
+                        </div>
+                        <div className="flex gap-5 items-center">
+                            <div className='text-xl'>Sort By: 
+                                <select>
+                                    <option value="1">Most Relevant</option>
+                                    <option value="1">salary</option>
+                                </select>
+                            </div>
+                            <div className="w-px border border-gray h-10"></div>
+                            <a onClick={()=>dispatch(setGridResponse(true))}><i className="text-2xl fa-solid fa-border-all"></i></a>
+                            <a onClick={()=>dispatch(setGridResponse(false))}><i className=" text-2xl fa-solid fa-list"></i></a>
+                        </div>
+                    </div>
+                    <>
+                        <div className={gridResponse?"w-full mt-10 gap-5 grid grid-cols-2":"w-full mt-10 flex flex-col gap-5"}>
+                            {
+                                allJobs.map((item,index)=>(
+                                    <JobCard key={index}/>
+                                ))
+                            }
+                        </div>
+                        <div className="flex w-full justify-center mt-10">
+
+
+                        <Pagination count={10} color='primary' page={page} shape="rounded" size='large' onChange={(event,value)=>setPage(value)}/>
+
+                        </div>
+                    </>
+
+
+                    
+                </div>
             </section>
             <Footer />
         </>

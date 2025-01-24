@@ -38,7 +38,7 @@ const Navbar = () => {
             <Drawer open={open} onClose={toggleDrawer}>
                 <div className=' w-80 h-screen d-flex flex-col items-between py-12 px-5 justify-center'>
                     <img src={logo} alt="Logo" width={"200px"} />
-                    <div className="w-full flex flex-col gap-10 my-5 justify-between mt-12">
+                    <div className="w-full flex-1 flex flex-col gap-10 my-5 justify-between mt-12">
                         <div className="flex w-full flex-col gap-5 items-center">
                             <div className="p-5 bg-green-200 hover:bg-blue-400 w-full text-center text-xl rounded-full text-green-100 hover:text-white ">
                                 Find jobs</div>
