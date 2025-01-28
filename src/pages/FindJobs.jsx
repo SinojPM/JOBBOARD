@@ -8,6 +8,7 @@ import JobCard from '../components/JobCard'
 import { useDispatch, useSelector } from 'react-redux'
 import { setGridResponse } from '../redux/slices/responseSlice'
 import { Pagination } from '@mui/material'
+import classNames from 'classnames'
 
 
 const FindJobs = () => {
@@ -15,6 +16,11 @@ const FindJobs = () => {
     const [page,setPage]=useState(1)
     const {gridResponse} = useSelector((state)=>state.responseReducer)
     const allJobs = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+    const jobsPerPage = 10
+    const totalPage =  Math.ceil(allJobs.length/jobsPerPage)
+    const currentPageLastIndex = page*jobsPerPage
+    const currentPageFirstIndex = currentPageLastIndex-jobsPerPage
+    const cardsOnPage = allJobs.slice(currentPageFirstIndex,currentPageLastIndex)
     
     return (
         <>
@@ -52,14 +58,14 @@ const FindJobs = () => {
                                 </select>
                             </div>
                             <div className="w-px border border-gray h-10"></div>
-                            <a onClick={()=>dispatch(setGridResponse(true))}><i className="text-2xl fa-solid fa-border-all"></i></a>
-                            <a onClick={()=>dispatch(setGridResponse(false))}><i className=" text-2xl fa-solid fa-list"></i></a>
+                            <a onClick={()=>dispatch(setGridResponse(true))}><i className={classNames("text-2xl fa-solid fa-border-all",gridResponse&&"text-blue-400")}></i></a>
+                            <a onClick={()=>dispatch(setGridResponse(false))}><i className={classNames(" text-2xl fa-solid fa-list",!gridResponse&&"text-blue-400 bg-blue-200")}></i></a>
                         </div>
                     </div>
                     <>
-                        <div className={gridResponse?"w-full mt-10 gap-5 grid grid-cols-2":"w-full mt-10 flex flex-col gap-5"}>
+                        <div className={gridResponse?"transition-all durarion-300 delay-300 ease-in-out w-full mt-10 gap-5 grid grid-cols-2":"w-full mt-10 flex flex-col gap-5"}>
                             {
-                                allJobs.map((item,index)=>(
+                                cardsOnPage?.map((item,index)=>(
                                     <JobCard key={index}/>
                                 ))
                             }
@@ -67,7 +73,7 @@ const FindJobs = () => {
                         <div className="flex w-full justify-center mt-10">
 
 
-                        <Pagination count={10} color='primary' page={page} shape="rounded" size='large' onChange={(event,value)=>setPage(value)}/>
+                        <Pagination variant='outlined' count={totalPage} color='primary' page={page} shape="rounded" size='large' onChange={(event,value)=>setPage(value)}/>
 
                         </div>
                     </>
