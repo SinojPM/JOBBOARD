@@ -4,7 +4,7 @@ import React from 'react'
 
 const Jobfilter = () => {
     return (
-        <div className={classNames('w-1/5  flex flex-col py-20 hidden md:block lg:block')}>
+        <div className={classNames('w-full md:w-1/5 lg:w-1/5 grid grid-cols-2 md:flex lg:flex flex-row md:flex-col lg:flex-col py-20')}>
             <div className='flex flex-col'>
                 <h1 className="text-xl text-blue-300">Type Of Employment</h1>
                 <label className='flex items-center'><Checkbox />
@@ -23,7 +23,7 @@ const Jobfilter = () => {
                     <div className='text-xl text-gray'>Contract (0)</div>
                 </label>
             </div>
-            <div className='flex flex-col mt-10'>
+            <div className='flex flex-col mt-0 md:mt-10 lg:mt-10'>
                 <h1 className="text-xl text-blue-300">Categories</h1>
                 <label className='flex items-center'><Checkbox />
                     <div className='text-xl text-gray'>Design (0)</div>
@@ -50,7 +50,7 @@ const Jobfilter = () => {
                     <div className='text-xl text-gray'>Technology (0)</div>
                 </label>
             </div>
-            <div className='flex flex-col mt-10'>
+            <div className='flex flex-col mt-0 md:mt-10 lg:mt-10'>
                 <h1 className="text-xl text-blue-300">Job Level</h1>
                 <label className='flex items-center'><Checkbox />
                     <div className='text-xl text-gray'>Entry Level (0)</div>
@@ -68,7 +68,7 @@ const Jobfilter = () => {
                     <div className='text-xl text-gray'>Other (0)</div>
                 </label>
             </div>
-            <div className='flex flex-col mt-10'>
+            <div className='flex flex-col mt-0 md:mt-10 lg:mt-10'>
                 <h1 className="text-xl text-blue-300">Salary Range</h1>
                 <label className='flex items-center'><Checkbox />
                     <div className='text-xl text-gray'>Below 10000 rs (0)</div>

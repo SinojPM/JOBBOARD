@@ -6,7 +6,7 @@ import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import FindJobs from './pages/FindJobs'
 import BrowseCompanies from './pages/BrowseCompanies'
-
+import CompanyProfile from './pages/CompanyProfile'
 
 function App() {
 
@@ -17,7 +17,7 @@ function App() {
         <Route path='/' element={<Home/>}></Route>
         <Route path='/find-jobs' element={<FindJobs/>}></Route>
         <Route path='/browse-companies' element={<BrowseCompanies/>}></Route>
-       
+       <Route path='/companies/:cid' element={<CompanyProfile/>}></Route>
       </Routes>
     </>
   )

@@ -42,7 +42,7 @@ const FindJobs = () => {
                         <p className='text-black text-xl'>Popular: <span className='text-gray textxl'>MERN,UI/UX developer etc</span></p>
                     </div>
             </section>
-            <section className='flex p-5 md:px-5 lg:px-28 w-full'>
+            <section className='flex p-5 md:px-5 lg:px-28 w-full flex-col-reverse md:flex-row lg:flex-row'>
                     <Jobfilter/>
                 <div className="flex-1 flex-col w-full py-20">
                     <div className="flex justify-between items-start lg:items-center flex-col gap-5 md:flex-row lg:flex-row">

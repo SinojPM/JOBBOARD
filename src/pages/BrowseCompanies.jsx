@@ -54,13 +54,12 @@ const BrowseCompanies = () => {
             </div>
             <div id='gsap-rec' className={classNames('w-100',allJobsResponse&&"hidden")}>
                 <section className='px-5 lg:px-28 py-20'>
-                   <div className='flex justify-between'>
+                   <div className='flex justify-between flex-col md:flex-row lg:flex-row'>
                        <div> 
                        <h1 className="text-start text-4xl md:text-5xl lg:text-5xl font-bold">Recomended Companies</h1>
                        <h1 className="text-xl text-gray font-semibold">Based On Your Profile, company Preferances And recent Activity</h1>
                        </div>
                        <div className='mt-10'><a onClick={()=>dispatch(setAllJobsResponse(true))} className="text-blue-400 ms-10 cursor-pointer">View all Companies  <i className="fa-solid fa-arrow-right"></i></a></div>
-    
                    </div>
                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-10 gap-10">
                     <CompanyCard/>
