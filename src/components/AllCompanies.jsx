@@ -1,16 +1,26 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Companyfilter from './Companyfilter'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import CompanyCard from './CompanyCard'
 import { Pagination } from '@mui/material'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { setAllJobsResponse } from '../redux/slices/responseSlice'
 
 
 const AllCompanies = () => {
     const [page,setPage]=useState(1)
     const dispatch = useDispatch()
+    const {allJobsResponse} = useSelector((state)=>state.responseReducer)
+    useGSAP(()=>{
+        gsap.from("#allJob",{
+            xPercent:100,
+            ease:"power1.inOut",
+            opacity:0
+        })
+    },[allJobsResponse])
+
+
     const allCompanies = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
     const companiesPerPage = 10
     const totalPage =  Math.ceil(allCompanies.length/companiesPerPage)
@@ -19,7 +29,7 @@ const AllCompanies = () => {
     const cardsOnPage = allCompanies.slice(currentPageFirstIndex,currentPageLastIndex)
 
   return (
-    <section className='flex p-5 md:px-5 lg:px-28 w-full flex-col-reverse md:flex-row lg:flex-row'>
+    <section id='allJob' className='flex p-5 md:px-5 lg:px-28 w-full flex-col-reverse md:flex-row lg:flex-row'>
         <Companyfilter/>   
         <div className="flex-1 flex-col w-full py-20">
                     <div className="flex justify-between items-start lg:items-center flex-col gap-5 md:flex-row lg:flex-row">

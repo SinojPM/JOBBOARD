@@ -1,10 +1,12 @@
 import React from 'react'
 import logo1 from '../assets/CompanyLogo2.svg'
 import Category from './Category'
+import { useNavigate } from 'react-router-dom'
 
 const CompanyCard = () => {
+    const navigate = useNavigate()
     return (
-        <div className='w-full h-96 p-7 flex flex-col gap-10 border border-gray'>
+        <div className='w-full h-96 p-7 flex flex-col gap-10 border border-gray hover:shadow-xl hover:text-blue-300 hover:rounded'onClick={()=>navigate('/companies/5555')}>
             <div className="flex w-full justify-between items-center">
                 <div className="overflow-hidden w-16 h-16">
                     <img className='w-full' src={logo1} alt="" />

@@ -36,6 +36,20 @@ h1,h2,h3,h4,h5,h6{
 .cat::-webkit-scrollbar { 
   display: none;  /* Safari and Chrome */
 }
-
+.bottom-jobs{
+  position: relative;
+  overflow: hidden;
+}
+.bottom-jobs::before{
+  content: '';
+  position: absolute;
+  background-color: #ffff;
+  width: 100px;
+  height: 100px;
+  top: -50px;
+  left: -50px;
+  z-index: 1;
+  transform: rotate(45deg);
+}
 
 

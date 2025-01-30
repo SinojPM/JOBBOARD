@@ -103,7 +103,7 @@ const Home = () => {
                     <HomeJobCard/>
                 </div>
             </section>
-            <section className="px-5 lg:px-28 py-10 bg-blue-100">
+            <section className="px-5 lg:px-28 py-10 w-full bg-blue-100 bottom-jobs">
                 <div className='text-blue-400 text-xl flex sm:flex-wrap justify-between'>
                     <h1 className='text-4xl font-black text-gray'>Latest <span className='text-4xl text-blue-300' >Jobs</span></h1>
                     <a href="">Show All<i class="fa-solid fa-arrow-right text-blue-300 hover:text-green-100 text-2xl"></i></a>

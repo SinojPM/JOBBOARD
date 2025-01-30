@@ -25,10 +25,9 @@ const BrowseCompanies = () => {
         gsap.from("#gsap-rec",{
             xPercent:100,
             ease:"power1.inOut",
-            duration:"3",
             opacity:0
         })
-    },[])
+    },[allJobsResponse])
   return (
     <>
         <div className='px-5 lg:px-28 '>

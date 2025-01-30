@@ -11,6 +11,13 @@ import framer from '../assets/tech/framer.svg'
 import js from '../assets/tech/js.svg'
 import mixpanel from '../assets/tech/mixpanel.svg'
 import ruby from '../assets/tech/ruby.svg'
+import TeamCard from '../components/TeamCard'
+import Flag from 'react-world-flags'
+import { countries } from '../datas/countries'
+import Perks from '../components/Perks'
+import { companyPerks } from '../datas/perks'
+import LatestJobs from '../components/LatestJobs'
+import Footer from '../components/Footer'
 
 const techStack = [
     {
@@ -154,10 +161,71 @@ const CompanyProfile = () => {
                     <div className='py-10 flex flex-col gap-10'>
                         <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold">Office Location</h1>
                         <p className="text-xl text-gray">Stripe offices spread across 20 countries</p>
+                        <div className="flex flex-col gap-5">
+                            {
+                                countries.slice(0,5).map((item)=>(
+                                    <div className='flex gap-10 items-center'>
+                                <Flag code={item.code} width={70} />
+                                <h1 className="text-2xl text-black font-bold">{item.name}</h1>
+                            </div>
+                                ))
+                            }
+                        </div>
+                        <a href="" className="text-xl text-blue-400 font-bold">View locations  <i className='fa-solid fa-arrow-right'></i></a>
+                        <div className="w-full border border-px border-gray"></div>
                     </div>
                 </div>
             </section>
-            <hr className="text-gray" />
+            <div className="px-5 lg:px-28"><hr className="text-gray px-5 lg:px-28" /></div>
+            
+            <section id='team' className='px-5 lg:px-28 py-16'>
+                <div className='flex justify-between items-center'>
+                    <h1 className="text-4xl font-bold">
+                        Team
+                    </h1>
+                    <a href="" className="text-blue-400 text-xl font-bold">See All(5)</a>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 mt-10">
+                    <TeamCard/>
+                    <TeamCard/>
+                    <TeamCard/>
+                    <TeamCard/>
+                    <TeamCard/>
+                </div>
+            </section>
+
+            <div className="px-5 lg:px-28"><hr className="text-gray px-5 lg:px-28" /></div>
+
+            <section id="perks" className="px-5 lg:px-28 py-20">
+                <div>
+                    <h1 className="text-black text-4xl font-bold">Perks & Benefits</h1>
+                    <h1 className="text-gray text-xl font-semibold">The job comes with several Perks And Benefits</h1>
+                </div>
+                <div className="py-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-16">
+                    {
+                        companyPerks.slice(0,8).map((item)=>(
+                            <Perks data={item}/>
+                        ))
+                    }
+                </div>
+            
+            </section>
+            <section  className="px-5 lg:px-28 py-10 bg-blue-100 bottom-jobs w-full">
+                <div className='text-blue-400 text-xl flex sm:flex-wrap justify-between'>
+                    <h1 className='text-4xl font-black text-gray'>open <span className='text-4xl text-blue-300' >Jobs</span></h1>
+                    <a href="">Show All<i class="fa-solid fa-arrow-right text-blue-300 hover:text-green-100 text-2xl"></i></a>
+                </div>
+                <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5">
+                    <LatestJobs/>
+                    <LatestJobs/>
+                    <LatestJobs/>
+                    <LatestJobs/>
+                    <LatestJobs/>
+                    <LatestJobs/>
+                </div>
+            </section>
+            <Footer/>
+            
 
         </>
     )
